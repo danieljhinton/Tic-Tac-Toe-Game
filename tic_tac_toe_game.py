@@ -2,27 +2,12 @@ import os
 
 # DATA
 
-# Board
-board_list = ['#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
-
 # 'How to play' display board
 how_to_play_board_list = ['#', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 # Nested list of winning line combinations
 winning_combinations = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8],
                         [3, 6, 9], [1, 5, 9], [3, 5, 7]]
-
-# Setting which player's turn it is
-current_player = 1
-
-# Setting the winner decided boolean
-winner_decided = False
-
-# Setting the game turned on boolean so the user can play again
-
-game_on = True
-
-# Counting games played and how many times each player has won
 
 games_played = 0
 player_one_wins = 0
@@ -113,8 +98,7 @@ def display_game_results(games_played, player_one_wins, player_two_wins):
     # Display the total number of wins for each player and games played when the
     # User no longer wants to continue playing
 
-    print(f'''
-Thanks for playing!\n
+    print(f'''Thanks for playing!\n
 Results:\n
 Games played: {games_played}\n
 Player one: {player_one_wins} wins\n
@@ -134,7 +118,13 @@ print('Let\'s begin!\n')
 
 # Playing
 
+game_on = True
+
 while game_on:
+
+    winner_decided = False
+    board_list = ['#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+    current_player = 1
 
     while not winner_decided:
         
@@ -149,6 +139,7 @@ while game_on:
         current_player = change_players_turn(current_player)
     
     game_on = play_again_check()    # Asking the user if they want to play again
+    print('')    # Printing newline prior to starting a new game
 
 # Displaying the results of all games played
 display_game_results(games_played, player_one_wins, player_two_wins)
