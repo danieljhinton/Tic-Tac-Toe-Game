@@ -15,6 +15,14 @@ player_two_wins = 0
 
 # FUNCTIONS
 
+def display_scoreboard():    # Display the game number and score before each game
+    global games_played, player_one_wins, player_two_wins
+    print(f'GAME {games_played + 1}\n')
+
+    if games_played > 0:
+        print(f'Player one: {player_one_wins} wins\n')
+        print(f'Player two: {player_two_wins} wins\n')
+
 def display_board(board_list):    # Display the current board
     print("\n {7} | {8} | {9}\n-----------\n {4} | {5} | {6}\n-----------\n {1} |\
  {2} | {3}\n".format(*board_list))
@@ -125,6 +133,7 @@ while game_on:
     winner_decided = False
     board_list = ['#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
     current_player = 1
+    display_scoreboard()
 
     while not winner_decided:
         
