@@ -65,7 +65,7 @@ def player_turn(board_list, current_player):    # Taking a turn
 def print_winner_message(winner):    # Prints a message stating the winner
     print(f'Winner! Player {winner}!\n')
     global winner_decided, games_played, player_one_wins, player_two_wins
-    if winner == 1:
+    if winner == 'One':
         player_one_wins += 1
     else:
         player_two_wins += 1
