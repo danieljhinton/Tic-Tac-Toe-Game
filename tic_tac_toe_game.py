@@ -98,8 +98,7 @@ def display_game_results(games_played, player_one_wins, player_two_wins):
     # Display the total number of wins for each player and games played when the
     # User no longer wants to continue playing
 
-    print(f'''
-Thanks for playing!\n
+    print(f'''Thanks for playing!\n
 Results:\n
 Games played: {games_played}\n
 Player one: {player_one_wins} wins\n
@@ -140,6 +139,7 @@ while game_on:
         current_player = change_players_turn(current_player)
     
     game_on = play_again_check()    # Asking the user if they want to play again
+    print('')    # Printing newline prior to starting a new game
 
 # Displaying the results of all games played
 display_game_results(games_played, player_one_wins, player_two_wins)
