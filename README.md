@@ -2,6 +2,8 @@
 
 My first main coding project
 
+![Example image one](/img/example_image_one.png)![Example image two](/img/example_image_two.png)
+
 #### Features
 
 - Written in Python
